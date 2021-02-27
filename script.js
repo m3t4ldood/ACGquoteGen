@@ -98,7 +98,7 @@ let quotes=[
     "Always wash your hands (wuth soap and hot water)",
     "If its not yours - dont touch it",
     "Know that life will go on without you.",
-    "Can you find the Cat in the App?",
+    "Can you find the Cat in the App?🐈",
 ];
 
 function displayQuote() {
