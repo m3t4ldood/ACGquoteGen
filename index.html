@@ -1,18 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+</style>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icons/favicon.png">
+    <title>Random quote</title>
 </head>
-<body>
-    <h1>Random Quote Generator</h1>
-    <div id="quoteDisplay">
-        <!-- Quotes will display here -->
-    </div>
-    <button onclick="newQuote()">New Quote</button>
 
-    <script src="script.js"></script>
+<body style="text-align: center;">
+    <div class="content">
+        <div class="card">
+            <h2>Random quote</h2>
+            <p>Do you want a random quote ?</p>
+            <button onclick="displayQuote()" class="btn">Generate</button>
+        </div>
+        <div id="quote"></div>
+    </div>
+
+    <div class="tooltip">Here kitty kitty
+        <span class="tooltiptext">🐱</span>
+    </div>
+
 </body>
+<script src="script.js"></script>
+
 </html>
