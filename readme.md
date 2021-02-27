@@ -1,4 +1,4 @@
-M3t4ldooD.github.io/ACGquoteGen
+Https://M3t4ldooD.github.io/ACGquoteGen
 
 Make functioning quote generator
 Give it crud functionality
