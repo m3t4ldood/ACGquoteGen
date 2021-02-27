@@ -95,7 +95,7 @@ let quotes=[
     "Never exaggerate the only thing it inflates is disbelief.",
     "Be kind to everyone (initially).",
     "If life gives you lemons - tuck em",
-    "Always wash your hands (wuth soap and hot water)",
+    "Always wash your hands (with soap and hot water)",
     "If its not yours - dont touch it",
     "Know that life will go on without you.",
     "Can you find the Cat in the App?🐈",
