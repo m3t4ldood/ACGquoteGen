@@ -7,7 +7,7 @@ text-align: center;}
 .btn{height:50px; width:150px;
 font-size: 18px;
 color:#ffffff;
-background-color: dodgerblue;
+background-color: red;
 border:none;
 padding:5px;
 border-radius: 5px;}
@@ -17,7 +17,7 @@ margin:40px auto;
 max-width:500px;
 max-height:300px;
 text-align: center;
-background-color: #000000;
+background-color: #ffffff;
 border-radius: 5px;
 } 
 
