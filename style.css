@@ -40,7 +40,6 @@ background-color: rgb(110, 110, 110);
 
 .tooltip {
 position: relative;
-display: inline-flex;
 border: #000;
     }
 
