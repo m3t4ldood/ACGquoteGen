@@ -93,25 +93,24 @@ let quotes=[
     "Always speak the truth but limit how much of it is spoken.",
     "Do not appear to be hardworking - make everything seem effortless.",
     "Never exaggerate the only thing it inflates is disbelief.",
-    "Be kind to everyone (initially).",
+
+    "Be kind to everyone(initially).",
     "If life gives you lemons - tuck em",
     "Always wash your hands (with soap and hot water)",
     "If its not yours - dont touch it",
     "Know that life will go on without you.",
-    "Can you find the Cat in the App?🐈",
+    "🐈┌∩┐( ͡~ ͜ʖ ͡°)┌∩┐🐈",
 ];
 
-function displayQuote() {
-    
+function displayQuotes() {
+
     let index = Math.floor(Math.random() * quotes.length);
 
     let div = document.querySelector('#quote');
-    let quote = `<div class="card">
-    <img src="icons/favicon.png">
+    let quote = `
+    <div class="quote">
     <p>${quotes[index]}</p>
-    <img src="icons/favicon.png">
-   </div>
-    `;
+    </div>`;
     div.innerHTML = quote;
 
 }

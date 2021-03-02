@@ -1,30 +1,65 @@
-body{background-color: indigo;  margin:auto;}
-h2{background-color: #1c1c1c; color:#ffffff;
-padding:10px;
-font-family: arial;
-text-align: center;}
-
-.btn{height:50px; width:150px;
-font-size: 18px;
-color:#ffffff;
-background-color: red;
-border:none;
-padding:5px;
-border-radius: 5px;}
-
-.card{padding:15px 30px 15px 30px;
-margin:40px auto;
-max-width:500px;
-max-height:300px;
-text-align: center;
-background-color: #ffffff;
-border-radius: 5px;
-} 
-
-p{font-family:'Segoe UI';
-font-weight:400;
-font-size: 20px;}
-
-img{height:25px;
-width:25px;
+body{
+background-color: rgb(110, 110, 110);
 }
+
+h2{
+font-family: chiller;
+font-size: 50px; 
+background-color:#000;
+}
+
+.btn{
+-webkit-box-shadow: 5px 5px 15px 5px #000000; 
+box-shadow: 5px 5px 15px 5px #000000;
+background-color: #000;
+border-radius: 100px;
+color: rgb(102, 102, 102);
+font-size: 100px;
+font-family: chiller;
+}
+
+.card{
+border-radius: 80px;
+color: rgb(110, 110, 110);} 
+
+p{
+-webkit-box-shadow: 5px 5px 15px 5px #000000; 
+box-shadow: 5px 5px 15px 5px #000000;
+font-family: chiller;
+font-size: 80px;
+color: rgb(110, 110, 110);
+background-color: #000;
+border-radius: 100px;
+}
+
+img{
+height:25px;
+width:25px;
+background-color: rgb(110, 110, 110);
+}
+
+.tooltip {
+position: relative;
+display: inline-flex;
+border: #000;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        color: #000;
+        text-align: center;
+        border-color: rgb(252, 247, 247);
+        padding: 5px;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }

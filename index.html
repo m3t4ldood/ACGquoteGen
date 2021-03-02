@@ -1,56 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-    .tooltip {
-        position: relative;
-        display: inline-block;
-        border-bottom: 1px dotted black;
-    }
-
-    .tooltip .tooltiptext {
-        visibility: hidden;
-        width: 120px;
-        background-color: black;
-        color: #fff;
-        text-align: center;
-        border-radius: 6px;
-        padding: 5px 0;
-
-        /* Position the tooltip */
-        position: absolute;
-        z-index: 1;
-        bottom: 100%;
-        left: 50%;
-        margin-left: -60px;
-    }
-
-    .tooltip:hover .tooltiptext {
-        visibility: visible;
-    }
-</style>
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="icons/favicon.png">
-    <title>ACGproject3</title>
+    <title>🐈┌∩┐( ͡~ ͜ʖ ͡°)┌∩┐🐈
+</title>
 </head>
 
 <body style="text-align: center;">
     <div class="content">
         <div class="card">
-            <h2>E-Vice</h2>
-            <p> here's some fun quotes and random sayings that should motivate you </p>
-            <button onclick="displayQuote()" class="btn">🌟</button>
+            <button onclick="displayQuotes()" class="btn">{ E-vice }</button>
+            </div>
+            <div id="quote"></div>
+            </div>
         </div>
         <div id="quote"></div>
     </div>
 
-    <div class="tooltip">psspspspssps...
-        <span class="tooltiptext">🐈</span>
+    <div class="tooltip">
+        psspspspssps...
+    <span class="tooltiptext">🐈</span>
     </div>
 
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
-
 </html>
