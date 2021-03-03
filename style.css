@@ -5,13 +5,14 @@ h2{
 font-family: chiller;
 font-size: 50px; 
 background-color:#000;
+outline: none;
 }
 .btn{
 -webkit-box-shadow: 5px 5px 15px 5px #000000; 
 box-shadow: 5px 5px 15px 5px #000000;
 background-color: #000;
 border-radius: 100px;
-/* border: 0px none transparent; */
+Outline: none;
 color: rgb(102, 102, 102);
 font-size: 100px;
 font-family: chiller;
@@ -30,6 +31,7 @@ font-size: 100px;
 color: rgb(110, 110, 110);
 background-color: #000;
 border-radius: 100px;
+outline: none;
 }
 
 img{
@@ -49,7 +51,7 @@ position: relative;
         color: #000;
         text-align: center;
         padding: 5px;
-
+        outline: none;
         /* Position the tooltip */
         position: absolute;
         z-index: 1;
@@ -60,6 +62,7 @@ position: relative;
 
     .tooltip:hover .tooltiptext {
         visibility: visible;
+        outline: none;
     }
 
 table{
