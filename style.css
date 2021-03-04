@@ -3,7 +3,7 @@ background: radial-gradient(ellipse at center, #4D4D4D 0%, #7A7A7A 46%, #999999 
 }
 h2{
 font-family: chiller;
-font-size: 50px; 
+font-size: 10px; 
 background-color:#000;
 outline: none;
 }
@@ -16,6 +16,16 @@ Outline: none;
 color: rgb(102, 102, 102);
 font-size: 100px;
 font-family: chiller;
+}
+.link{
+-webkit-box-shadow: 5px 5px 15px 5px #000000; 
+box-shadow: 5px 5px 15px 5px #000000;
+background-color: #000;
+border-radius: 100px;
+Outline: none;
+color: rgb(102, 102, 102);
+font-size: 20px;
+font-family: chiller;  
 }
 
 .card{

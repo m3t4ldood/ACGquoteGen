@@ -1,5 +1,5 @@
-const db = require("../models");
-const Tutorial = db.tutorials;
+const db = require("server.js");
+const Server = db.Server;
 
 // Create and Save
 exports.create = (req, res) => {

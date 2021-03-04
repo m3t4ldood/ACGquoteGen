@@ -99,8 +99,12 @@ let quotes=[
     "Always wash your hands (with soap and hot water)",
     "If its not yours - dont touch it",
     "Know that life will go on without you.",
-    "🐈┌∩┐( ͡~ ͜ʖ ͡°)┌∩┐🐈",
+    "💩",
 ];
+
+function allQuotes() {
+    alert('fuck you!');
+}
 
 function displayQuotes() {
 

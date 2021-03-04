@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 app.use(...);
 
-const db = require("./app/models");
+const db = require("./script");
 db.mongoose
     .connect(db.url, {
         useNewUrlParser: true,
