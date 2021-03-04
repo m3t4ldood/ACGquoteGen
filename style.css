@@ -36,12 +36,12 @@ color: rgb(110, 110, 110);}
 p{
 -webkit-box-shadow: 5px 5px 15px 5px #000000; 
 box-shadow: 5px 5px 15px 5px #000000;
-font-family: chiller;
-font-size: 100px;
-color: rgb(110, 110, 110);
 background-color: #000;
 border-radius: 100px;
-outline: none;
+Outline: none;
+color: rgb(110, 110, 110);
+font-size: 100px;
+font-family: chiller;
 }
 
 img{
