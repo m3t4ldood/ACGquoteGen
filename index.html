@@ -2,31 +2,86 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
   <title>🐈┌∩┐( ͡~ ͜ʖ ͡°)┌∩┐🐈</title>
+  <style>
+    body {
+      text-align: center;
+      background: #111;
+      color: #eee;
+      font-family: monospace;
+      padding: 20px;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #222;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+
+    #quoteBox {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px #000;
+    }
+
+    #quoteText {
+      font-size: 1.3em;
+    }
+
+    #quoteAuthor {
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      opacity: 0.5;
+    }
+  </style>
 </head>
 
 <body>
   <main>
     <div class="button-group">
-      <button onclick="displayFav()" class="link" title="Favorites">{Fav}</button>
-      <button onclick="displayAll()" class="link" title="All Quotes">{Quotes}</button>
-      <button onclick="displayQuotes()" class="btn" title="Generate">{ E-vice }</button>
-      <button onclick="addQuotes()" class="link" title="Create New">{Create}</button>
-      <button onclick="shareQuotes()" class="link" title="Share">{Share}</button>
+      <button onclick="displayFav()">{Fav}</button>
+      <button onclick="displayAll()">{Quotes}</button>
+      <button onclick="displayQuotes()">{ E-vice }</button>
+      <button onclick="addQuotes()">{Create}</button>
+      <button onclick="shareQuotes()">{Share}</button>
     </div>
 
     <div id="quoteBox">
-  <p id="quoteText">Click { E-vice } to generate a quote.</p>
-  <p id="quoteAuthor"></p>
-</div>
-    
+      <p id="quoteText">Click { E-vice } to generate a quote.</p>
+      <p id="quoteAuthor"></p>
+    </div>
   </main>
 
-  <footer class="tooltip">
-    🤘 2025 M3t4ldooD 🤘
+  <footer>
+    🤘 2023 M3t4ldooD 🤘
   </footer>
   <script src="script.js"></script>
 </body>
