@@ -17,7 +17,7 @@
 
 ## 🚀 Live Demo
 **[🔗 Try it on GitHub Pages](#)**  
-*(link here once deployed)*
+https://m3t4ldood.github.io/ACGquoteGen
 
 ---
 
