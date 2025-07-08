@@ -66,3 +66,13 @@ function shareQuotes() {
     .then(() => alert("Copied to clipboard!"))
     .catch(() => alert("Could not copy to clipboard."));
 }
+const fallbackQuotes = [
+  { content: "Metal up your life.", author: "ACGquoteGen" },
+  { content: "I'm not lazy. I'm on energy-saving mode.", author: "Unknown" },
+  { content: "Why so serious?", author: "Joker" }
+];
+
+// replace inside catch block
+const fallback = fallbackQuotes[Math.floor(Math.random() * fallbackQuotes.length)];
+quoteText.textContent = `"${fallback.content}"`;
+quoteAuthor.textContent = `– ${fallback.author}`;
