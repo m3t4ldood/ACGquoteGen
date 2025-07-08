@@ -2,26 +2,31 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" width="100%">
-    <link rel="stylesheet" href="style.css">
-    <title>🐈┌∩┐( ͡~ ͜ʖ ͡°)┌∩┐🐈
-    </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>🐈┌∩┐( ͡~ ͜ʖ ͡°)┌∩┐🐈</title>
 </head>
 
-<body style="text-align: center;">
-    <button onclick="displayFav()" class="link">{Fav}</button>
-    <button onclick="displayAll()" class="link">{Quotes}</button>
-    <button onclick="displayQuotes()" class="btn">{ E-vice }</button>
-    <button onclick="addQuotes()" class="link">{Create}</button>
-    <button onclick="shareQuotes()" class="link">{Share}</button>
-    <div id="quote">
-        <iframe src="https://m3t4ldood.github.io/game3/" title="a game i made"></iframe>
+<body>
+  <main>
+    <div class="button-group">
+      <button onclick="displayFav()" class="link" title="Favorites">{Fav}</button>
+      <button onclick="displayAll()" class="link" title="All Quotes">{Quotes}</button>
+      <button onclick="displayQuotes()" class="btn" title="Generate">{ E-vice }</button>
+      <button onclick="addQuotes()" class="link" title="Create New">{Create}</button>
+      <button onclick="shareQuotes()" class="link" title="Share">{Share}</button>
     </div>
-    <footer class="tooltip">
-        🤘 2023 M3t4ldooD 🤘
-    </footer>
-    <script src="script.js"></script>
+
+    <div id="quote">
+      <iframe id="quoteFrame" src="about:blank" title="Quote Viewer" width="90%" height="300px" frameborder="0"></iframe>
+    </div>
+  </main>
+
+  <footer class="tooltip">
+    🤘 2025 M3t4ldooD 🤘
+  </footer>
+  <script src="script.js"></script>
 </body>
 
 </html>
