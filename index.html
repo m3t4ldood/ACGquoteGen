@@ -1,89 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>🐈┌∩┐( ͡~ ͜ʖ ͡°)┌∩┐🐈</title>
-  <style>
-    body {
-      text-align: center;
-      background: #111;
-      color: #eee;
-      font-family: monospace;
-      padding: 20px;
-    }
-
-    .button-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      background-color: #222;
-      color: #fff;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-
-    button:hover {
-      background-color: #444;
-    }
-
-    #quoteBox {
-      background: #222;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 600px;
-      margin: 0 auto;
-      box-shadow: 0 0 10px #000;
-    }
-
-    #quoteText {
-      font-size: 1.3em;
-    }
-
-    #quoteAuthor {
-      margin-top: 10px;
-      font-style: italic;
-    }
-
-    footer {
-      margin-top: 40px;
-      font-size: 0.9em;
-      opacity: 0.5;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultimate Quote Generator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #222;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  h1 {
+    margin-top: 20px;
+  }
+  #quote-box {
+    max-width: 600px;
+    margin: 20px auto;
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+    border-radius: 12px;
+    transition: background 0.5s;
+  }
+  #quote {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  #author {
+    font-size: 1.1em;
+    opacity: 0.8;
+  }
+  button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #00c6ff;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  button:hover {
+    background: #007b9f;
+  }
+  input {
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+  }
+</style>
 </head>
-
 <body>
-  <main>
-    <div class="button-group">
-      <button onclick="displayFav()">{Fav}</button>
-      <button onclick="displayAll()">{Quotes}</button>
-      <button onclick="displayQuotes()">{ E-vice }</button>
-      <button onclick="addQuotes()">{Create}</button>
-      <button onclick="shareQuotes()">{Share}</button>
-    </div>
 
-    <div id="quoteBox">
-      <p id="quoteText">Click { E-vice } to generate a quote.</p>
-      <p id="quoteAuthor"></p>
-    </div>
-  </main>
+<h1>Ultimate Quote Generator</h1>
+<div id="quote-box">
+  <p id="quote">Loading...</p>
+  <p id="author"></p>
+</div>
 
-  <footer>
-    🤘 2023 M3t4ldooD 🤘
-  </footer>
-  <script src="script.js"></script>
+<div>
+  <button onclick="prevQuote()">⬅ Previous</button>
+  <button onclick="newQuote()">➡ Next</button>
+  <button onclick="copyQuote()">📋 Copy</button>
+  <button onclick="toggleFavorite()">⭐ Favorite</button>
+  <button onclick="showFavorites()">❤️ View Favorites</button>
+  <button onclick="shareQuote()">🐦 Share</button>
+</div>
+
+<div>
+  <input type="text" id="search" placeholder="Search quotes..." oninput="searchQuotes()">
+</div>
+
+<script>
+const quotes = [
+  { text: "Be yourself; everyone else is already taken.", author: "Oscar Wilde" },
+  { text: "Two things are infinite: the universe and human stupidity.", author: "Albert Einstein" },
+  { text: "In the middle of every difficulty lies opportunity.", author: "Albert Einstein" },
+  { text: "Life is what happens when you're busy making other plans.", author: "John Lennon" },
+  { text: "Not all those who wander are lost.", author: "J.R.R. Tolkien" },
+  { text: "The best way to predict the future is to invent it.", author: "Alan Kay" }
+];
+
+let currentIndex = 0;
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+function displayQuote(index) {
+  const q = quotes[index];
+  document.getElementById("quote").textContent = q.text;
+  document.getElementById("author").textContent = "- " + q.author;
+  randomBackground();
+}
+
+function newQuote() {
+  currentIndex = (currentIndex + 1) % quotes.length;
+  displayQuote(currentIndex);
+}
+
+function prevQuote() {
+  currentIndex = (currentIndex - 1 + quotes.length) % quotes.length;
+  displayQuote(currentIndex);
+}
+
+function copyQuote() {
+  const q = `${quotes[currentIndex].text} — ${quotes[currentIndex].author}`;
+  navigator.clipboard.writeText(q);
+  alert("Quote copied!");
+}
+
+function toggleFavorite() {
+  const q = quotes[currentIndex];
+  const exists = favorites.find(f => f.text === q.text);
+  if (exists) {
+    favorites = favorites.filter(f => f.text !== q.text);
+    alert("Removed from favorites");
+  } else {
+    favorites.push(q);
+    alert("Added to favorites");
+  }
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+}
+
+function showFavorites() {
+  if (favorites.length === 0) {
+    alert("No favorites yet.");
+    return;
+  }
+  let favList = favorites.map(f => `"${f.text}" — ${f.author}`).join("\n\n");
+  alert("Favorites:\n\n" + favList);
+}
+
+function shareQuote() {
+  const q = encodeURIComponent(`${quotes[currentIndex].text} — ${quotes[currentIndex].author}`);
+  window.open(`https://twitter.com/intent/tweet?text=${q}`, "_blank");
+}
+
+function searchQuotes() {
+  const term = document.getElementById("search").value.toLowerCase();
+  const found = quotes.findIndex(q => q.text.toLowerCase().includes(term) || q.author.toLowerCase().includes(term));
+  if (found >= 0) {
+    currentIndex = found;
+    displayQuote(currentIndex);
+  }
+}
+
+function randomBackground() {
+  const colors = ["#222", "#333", "#444", "#550000", "#003355", "#113311", "#663399"];
+  document.body.style.background = colors[Math.floor(Math.random() * colors.length)];
+}
+
+displayQuote(currentIndex);
+</script>
+
 </body>
-
 </html>
