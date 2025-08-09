@@ -46,11 +46,21 @@
   button:hover {
     background: #007b9f;
   }
-  input {
-    padding: 8px;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: none;
+  /* Added style for the search input */
+  .search-container {
+    margin-top: 15px; /* Add some space above the search bar */
+  }
+  .search-container input[type="text"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 300px; /* Adjust width as needed */
+    font-size: 1em;
+    background: #fff;
+    color: #333;
+  }
+  .search-container button {
+    margin-left: 10px;
   }
 </style>
 </head>
@@ -70,6 +80,13 @@
   <button onclick="showFavorites()">❤️ View Favorites</button>
   <button onclick="shareQuote()">🐦 Share</button>
 </div>
+
+<!-- Added Search Section -->
+<div class="search-container">
+    <input type="text" id="search" placeholder="Search quotes or authors..." onkeyup="if(event.keyCode===13) searchQuotes()">
+    <button onclick="searchQuotes()">🔍 Search</button>
+</div>
+
 
 <script>
 const quotes = [
@@ -136,10 +153,30 @@ function shareQuote() {
 
 function searchQuotes() {
   const term = document.getElementById("search").value.toLowerCase();
-  const found = quotes.findIndex(q => q.text.toLowerCase().includes(term) || q.author.toLowerCase().includes(term));
-  if (found >= 0) {
-    currentIndex = found;
+  // Start search from the current index to loop through efficiently if needed
+  let foundIndex = -1;
+  // Search from current index to end
+  for (let i = currentIndex + 1; i < quotes.length; i++) {
+    if (quotes[i].text.toLowerCase().includes(term) || quotes[i].author.toLowerCase().includes(term)) {
+      foundIndex = i;
+      break;
+    }
+  }
+  // If not found from current index to end, search from beginning to current index
+  if (foundIndex === -1) {
+    for (let i = 0; i <= currentIndex; i++) {
+        if (quotes[i].text.toLowerCase().includes(term) || quotes[i].author.toLowerCase().includes(term)) {
+            foundIndex = i;
+            break;
+        }
+    }
+  }
+
+  if (foundIndex >= 0) {
+    currentIndex = foundIndex;
     displayQuote(currentIndex);
+  } else {
+      alert("No matching quotes found."); // Inform user if no quote is found
   }
 }
 
